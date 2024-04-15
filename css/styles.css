@@ -34,3 +34,12 @@ a.titles:hover h3 {
   color: #DDD;
   text-decoration: underline;
 }
+
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+section.article {
+  margin: auto 10%;
+}
