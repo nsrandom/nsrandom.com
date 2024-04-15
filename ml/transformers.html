@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="../css/pico.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>nsrandom.com | ML/AI</title>
+  </head>
+
+  <body>
+    <header class="container">
+      <nav>
+        <ul>
+          <!-- Intentional empty list -->
+        </ul>
+        <ul>
+          <li><a href="../index.html" class="contrast">Home</a></li>
+          <li id="theme_switcher">
+            <svg width="24" height="24">
+              <circle cx="12" cy="12" r="11" fill="#EEE" stroke="#111" stroke-width="2" />
+              <circle cx="12" cy="12" r="10" fill="#111" stroke="#EEE" stroke-width="2" />
+              <path d="M 12 22 A 10 10 90 0 1 12 2" fill="#EEE" />
+              <!-- http://xahlee.info/js/svg_circle_arc.html -->
+            </svg>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="article">
+        <h1 class="title">Understanding Transformers (from scratch)</h1>
+
+        <blockquote>
+          To learn how large language models (like GPT, LamDA, and others) work, it’s useful to understand how <mark>transformers</mark> work. <br/>
+          
+          To understand how transformers work, it’s good to understand how the <mark>attention mechanism</mark> works. <br/>
+
+          To understand how the attention mechanism works, it’s useful to understand how <mark>sequence-to-sequence</mark> (seq2seq) models work. <br/>
+
+          To understand how seq2seq models work, it’s useful to understand how <mark>recurrent neural networks</mark> (RNNs) work. <br/>
+
+          To have a better understanding of RNNs, one should have a foundational knowledge of <mark>neural networks</mark> and deep learning. <br/>
+
+          To learn about neural networks and deep learning, you probably first need to understand some <mark>basic machine learning</mark> concepts.
+
+          <footer>
+            <cite>— From a Google presentation, go/llms-from-scratch</cite>
+          </footer>
+        </blockquote>
+      </section>
+
+      <section class="article">
+        So let's go over these, bottom to top.
+      </section>
+
+      <!-- Basic ML Concepts -->
+      <section class="article">
+        <h2>Basic Machine Learning Concepts</h2>
+
+        <h4>How do machines "learn"?</h4>
+        <p>
+          An ML model is basically a very complex mathematical function with [lots of] parameters (aka weights). At the beginning, these weights are usually initialized with random values (or other reasonable guesses). The "learning process" (called training) involves the following high level steps:
+        </p>
+
+        <ol>
+          <li>Run the ML model (i.e. compute the math function) with a batch of input data, to compute an output</li>
+          <li>Evaluate the emitted output (known as the loss function)</li>
+          <li>Update the parameter weights slightly to improve (reduce) the loss</li>
+          <li>Go back to step 1 (stop when we are satisfied)</li>
+        </ol>
+
+        <p>
+          The idea is that with sufficient training and data using the above steps, the parameters of the complex mathematical function will converge to <b><i>good</i></b> values such that the model is able to <b><i>predict</i></b> values accurately on new data. The model <b><i>learns</i></b> and improves over time via the training process.
+        </p>
+
+        <div class="grid">
+          <p>
+            This is in contrast to normal/traditional/non-learning algorithms whose parameters are "fixed". They do not require any training, but they also do not learn from the data. They work great when we already know the computation model (true for the vast majority of code in the current world). But ML models have been able to solve a variety of problems that we don't have an intuitive sense of how to model the problem.
+            <br/><br/>
+            The <a class="contrast" href="https://xkcd.com/1425/">"XKCD: Is it a bird?"</a> problem was considered a very hard problem not so long ago, but has become easy to solve via ML approaches.
+          </p>
+          <img src="https://imgs.xkcd.com/comics/tasks.png" alt="XKCD 1425: Is it a bird?"/>
+        </div>
+
+        <article>
+          TODO: Example
+        </article>
+
+      </section>
+
+      <!-- NN and Deep Learning -->
+      <section class="article">
+        <h2>Neural Networks and Deep Learning</h2>
+
+      </section>
+      
+    </main>
+
+    <footer class="container">
+      <hr />
+      <p>&copy; Asif Sheikh (2024)</p>
+    </footer>
+
+    <script>
+      let isLight = false
+      const html = document.documentElement
+      const switchTheme = document.getElementById('theme_switcher')
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        // Detect dark mode
+        if (window.matchMedia) {
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            isLight = false
+            html.setAttribute('data-theme', 'dark')
+          }
+        }
+      });
+
+      // Change the theme on user toggle
+      switchTheme.addEventListener('click', (e) => {
+        e.preventDefault()
+        isLight = !isLight
+        html.setAttribute('data-theme', (isLight ? 'light': 'dark'))
+      });
+    </script>
+  </body>
+</html>

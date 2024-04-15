@@ -41,5 +41,10 @@ a.titles:hover h3 {
 }
 
 section.article {
-  margin: auto 10%;
+  margin: 40px 10%;
+}
+
+section.article blockquote {
+  font-style: italic;
+  line-height: 1.6;
 }
