@@ -1,0 +1,36 @@
+footer p {
+  text-align: center;
+}
+
+html, body {
+  height: 100vh;
+}
+
+header {
+  vertical-align: center;
+}
+
+body > footer {
+  position: sticky;
+  top: 100vh;
+}
+
+#titles {
+  margin-top: 10%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+a.titles {
+  text-decoration: none;
+  text-align: center;
+  color: #AAA;
+}
+
+a.titles:hover h3 {
+/*  background-color: #AAA;*/
+/*  color: #222;*/
+
+  color: #DDD;
+  text-decoration: underline;
+}
